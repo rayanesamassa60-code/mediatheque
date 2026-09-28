@@ -1,0 +1,290 @@
+/* ==========================================================================
+   GOTHAM CITY THEME - Dark & Cinematic
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;900&family=Roboto+Condensed:wght@400;500;700&display=swap');
+
+/* --- Variables & Thème Sombre Gotham --- */
+:root {
+  /* Fond principal très sombre (Noir Asphalte) */
+  --bg-main: #0a0d14;
+  
+  /* Fond des cartes, tables et formulaires (Acier / Slate très sombre) */
+  --bg-card: #131822;
+  
+  /* Fond des champs de saisie */
+  --bg-input: #1c2333;
+  
+  /* Or / Jaune Bat-signal pour les accents */
+  --primary: #f59e0b;
+  --primary-hover: #d4af37;
+  --primary-glow: rgba(245, 158, 11, 0.35);
+  
+  /* Couleurs de texte */
+  --text-main: #f1f5f9;
+  --text-muted: #94a3b8;
+  --text-gold: #d4af37;
+  
+  /* Bordures */
+  --border-color: #263147;
+  
+  /* Statuts */
+  --success: #34d399;
+  --success-bg: rgba(52, 211, 153, 0.12);
+  
+  --warning: #fbbf24;
+  --warning-bg: rgba(251, 191, 36, 0.12);
+  
+  --danger: #f87171;
+  --danger-bg: rgba(248, 113, 113, 0.15);
+  
+  --radius: 6px;
+  --shadow: 0 12px 30px -5px rgba(0, 0, 0, 0.85);
+  --transition: all 0.25s ease-in-out;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto Condensed', sans-serif;
+  margin: 0;
+  background-color: var(--bg-main);
+  background-image: 
+    radial-gradient(circle at 50% 0%, rgba(30, 41, 59, 0.4) 0%, transparent 75%),
+    linear-gradient(180deg, rgba(10, 13, 20, 0.98) 0%, rgba(5, 7, 10, 1) 100%);
+  background-attachment: fixed;
+  color: var(--text-main);
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+/* --- Header & Navigation --- */
+header {
+  background-color: var(--bg-card);
+  color: var(--text-main);
+  padding: 1.25rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 2px solid var(--border-color);
+  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.7);
+}
+
+header h1 {
+  margin: 0;
+  font-family: 'Cinzel', serif;
+  font-size: 1.6rem;
+  color: var(--primary);
+  font-weight: 900;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  text-shadow: 0 0 10px var(--primary-glow);
+}
+
+nav a {
+  color: var(--text-muted);
+  text-decoration: none;
+  margin-left: 0.75rem;
+  font-family: 'Cinzel', serif;
+  font-weight: 700;
+  font-size: 0.9rem;
+  padding: 0.5rem 0.85rem;
+  border-radius: var(--radius);
+  transition: var(--transition);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+nav a:hover {
+  color: var(--primary);
+  background-color: rgba(245, 158, 11, 0.08);
+}
+
+/* --- Content Container --- */
+main {
+  padding: 2.5rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+h2 {
+  font-family: 'Cinzel', serif;
+  color: var(--text-gold);
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-top: 0;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 0.5rem;
+  text-shadow: 0 0 8px rgba(212, 175, 55, 0.2);
+}
+
+/* --- Tableaux --- */
+.table-responsive {
+  width: 100%;
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  background: var(--bg-card);
+  margin-top: 1.5rem;
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  border: 1px solid var(--border-color);
+}
+
+th, td {
+  padding: 1rem 1.25rem;
+  text-align: left;
+}
+
+th {
+  background-color: #0b0e14;
+  color: var(--primary);
+  font-family: 'Cinzel', serif;
+  font-weight: 700;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  border-bottom: 2px solid var(--border-color);
+}
+
+td {
+  border-bottom: 1px solid var(--border-color);
+  font-size: 0.95rem;
+  color: var(--text-main);
+}
+
+tr:last-child td {
+  border-bottom: none;
+}
+
+tbody tr {
+  transition: var(--transition);
+}
+
+tbody tr:hover {
+  background-color: rgba(255, 255, 255, 0.03);
+}
+
+/* --- Badges de Statut --- */
+.disponible, .emprunte, .retard {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  border: 1px solid transparent;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.disponible {
+  color: var(--success);
+  background-color: var(--success-bg);
+  border-color: rgba(52, 211, 153, 0.3);
+}
+
+.emprunte {
+  color: var(--warning);
+  background-color: var(--warning-bg);
+  border-color: rgba(251, 191, 36, 0.3);
+}
+
+.retard {
+  color: var(--danger);
+  background-color: var(--danger-bg);
+  border-color: rgba(248, 113, 113, 0.3);
+}
+
+/* --- Formulaires & Inputs --- */
+form {
+  background: var(--bg-card);
+  padding: 2rem;
+  max-width: 450px;
+  margin-top: 1.5rem;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  border: 1px solid var(--border-color);
+}
+
+form label {
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  display: block;
+}
+
+form select, 
+form input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  margin-top: 0.5rem;
+  margin-bottom: 1.25rem;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius);
+  background-color: var(--bg-input);
+  font-family: 'Roboto Condensed', sans-serif;
+  font-size: 0.95rem;
+  color: var(--text-main);
+  transition: var(--transition);
+  outline: none;
+}
+
+form select:focus, 
+form input:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 10px var(--primary-glow);
+}
+
+/* --- Boutons --- */
+button, .btn-add, .btn {
+  width: 100%;
+  padding: 0.85rem 1.5rem;
+  background: linear-gradient(180deg, #232c3f 0%, #121722 100%);
+  color: var(--primary);
+  border: 1px solid var(--primary);
+  border-radius: var(--radius);
+  font-family: 'Cinzel', serif;
+  font-weight: 800;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  cursor: pointer;
+  transition: var(--transition);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+  text-decoration: none;
+  display: inline-block;
+  text-align: center;
+}
+
+button:hover, .btn-add:hover {
+  background: var(--primary);
+  color: #0a0d14;
+  box-shadow: 0 0 15px rgba(245, 158, 11, 0.6);
+  transform: translateY(-1px);
+}
+
+button:active, .btn-add:active {
+  transform: translateY(0);
+}
+
+/* --- Footer --- */
+footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  color: var(--text-muted);
+  font-size: 0.875rem;
+  border-top: 1px solid var(--border-color);
+  margin-top: 4rem;
+  font-family: 'Cinzel', serif;
+  letter-spacing: 1px;
+}
